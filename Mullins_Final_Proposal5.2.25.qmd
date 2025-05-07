@@ -1,0 +1,296 @@
+---
+title: "Research Proposal: Understanding the Impact of Cost-Sharing on Healthcare Utilization in Singapore"
+author: "Jacob Mullins"
+bibliography: the_bib.bib
+nocite: | 
+  @*
+csl: american-political-science-association.csl
+
+papersize: letter
+
+margin-left: 1in
+margin-right: 1in
+margin-top: 1in
+margin-bottom: 1in
+cap-location: top
+
+format: 
+  pdf:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    linestretch: 2
+    
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+\raggedright
+
+\setlength{\parindent}{20pt}
+
+# Introduction
+
+Healthcare financing presents complex ethical and economic challenges. In the United States, the prevailing model relies on employer-sponsored insurance and market-based incentives, leading to disparities in access, cost, and quality of care. High-deductible health plans (HDHPs), health savings accounts (HSAs), and private insurance dominate the landscape, yet they often fail to address gaps in coverage and promote cost-effective utilization. Preventive services, in particular, remain underutilized despite long-term benefits.
+
+Other systems offer different approaches. The United Kingdom, through its National Health Service (NHS), provides universal coverage with minimal point-of-care charges, reducing financial barriers but raising questions about system efficiency and responsiveness. Germany and France utilize social health insurance with mixed public-private funding and cost-sharing mechanisms. Singapore, by contrast, has developed a unique model that blends individual responsibility with universal access through savings and insurance. It mandates that workers contribute to personal health savings accounts (Medisave), which are used to pay for routine and preventive care, while major expenses are covered by MediShield Life and supported by safety-net subsidies such as MediFund (@Earn2020). Given persistent dissatisfaction with U.S. healthcare, characterized by rising costs and limited access to affordable preventive services, policymakers are increasingly exploring international models that offer both efficiency and consumer engagement.
+
+```{r fig.align="center", fig.cap="*Health Expenditure per Capita, 1970–2023*. The U.S. far outpaces other high-income countries in healthcare spending despite public dissatisfaction. This motivates exploration of alternative systems like Singapore's cost-sharing model."}
+knitr::include_graphics("health-expenditure-and-financing-per-capita.png")
+```
+
+As shown in **Figure 1**, U.S. per capita health spending has surged far beyond that of peer nations (Roser 2024). Singapore’s model is often praised for its cost-efficiency, low public expenditure, and favorable health outcomes. However, less is known about how individuals psychologically respond to these financial mechanisms, particularly how their personal Medisave balances influence whether they seek preventive services or pursue costly medical interventions. Does having more in savings encourage people to take better care of themselves? Or do psychological biases lead them to hoard funds for catastrophic needs, avoiding even subsidized or reimbursable care?
+
+## Research Question: 
+
+How does Singapore’s Medisave system influence healthcare utilization, including preventive care adoption and perceptions of vital versus elective treatments?
+
+This research matters because it addresses a critical behavioral component of healthcare systems that emphasize individual financial responsibility. The U.S. continues to struggle with promoting preventive care and managing moral hazard in both public and private insurance contexts @Fusco2023; @Gruber2022. Policymakers are increasingly looking to behavioral economics to guide reforms. Studying whether a savings-based system like Singapore’s alters health-seeking behavior through mental accounting, salience, or perceived liquidity may yield valuable insights for designing smarter cost-sharing structures elsewhere.
+
+While Singapore and the United States differ in culture and governance, Singapore’s approach to healthcare financing, particularly its use of mandatory health savings and limited insurance, offers an instructive contrast. The U.S. has begun expanding HSAs and experimenting with high-deductible plans, but without understanding the behavioral underpinnings of how people actually respond to personal financial responsibility in healthcare, such reforms may fall short. Studying Medisave may thus offer a behavioral blueprint for a more equitable and transparent cost-sharing system in the U.S.
+
+Roadmap: This paper begins with a literature review that outlines relevant theories and findings in the areas of moral hazard, cost-sharing, and health savings accounts. It introduces empirical evidence on Singapore’s system and comparative models. It then proposes a set of testable hypotheses and outlines a vignette-based survey methodology for measuring behavioral responses. The next sections describe sampling strategy, data variables, and planned statistical analyses. Simulated results and mock regression output are presented to illustrate how evidence could support the hypotheses. The proposal concludes with discussion of limitations and potential implications for global health policy design.
+
+# Literature Review
+
+## **Healthcare Financing and Moral Hazard**
+
+@Gruber2022 identifies behavioral inconsistencies in healthcare decision-making as an under-explored research frontier. He explains that moral hazard (the overuse of care when consumers are insulated from costs) is a central challenge in designing efficient systems. Traditional insurance systems fail to account for behavioral responses to cost-sharing, which can lead to inefficient allocation of resources. Cost-sharing is intended to mitigate moral hazard, but as @Fusco2023 demonstrate, it may also deter necessary care.
+
+The RAND Health Insurance Experiment @87f5b722-4f94-3796-8460-224356465506, often cited as foundational, demonstrated that higher co-payments reduce utilization across the board, including of essential services. This creates a delicate balance for designers of healthcare financing models: too little cost-sharing may promote waste; too much may suppress beneficial care.
+
+Recent research has explored how income, literacy, and trust in providers mediate these effects. For example, @doi:10.1056/NEJMsa1212321 showed that expanding Medicaid increased emergency department use, suggesting that moral hazard can manifest differently in vulnerable populations. These findings underscore the importance of understanding not just aggregate trends but individual-level decision-making.
+
+## **Health Savings Accounts: Singapore’s Medisave**
+
+Singapore’s Medisave system requires working adults to allocate a portion of their income to a personal health savings account. These funds can only be used for approved medical expenses. @Sun2025 finds that individuals receiving top-ups to their Medisave balances increase their medical spending by 13%, suggesting that consumers treat Medisave funds differently than out-of-pocket cash. While this raises concerns about moral hazard, the study notes that the increased utilization may reflect previously unmet needs, especially among lower-income groups. This supports the concept of "efficient moral hazard," where increased use improves outcomes.
+
+Further, @https://doi.org/10.1111/1468-0009.12264 explore the equity implications of Medisave, noting that low-income workers accumulate balances at slower rates, which may restrict timely access to care. These constraints can exacerbate disparities even within an ostensibly efficient system. Behavioral inertia, poor knowledge of account rules, and status-quo bias may all affect how people use their balances. These dynamics are rarely captured in administrative datasets, making survey-based designs like the one proposed here valuable complements to macro-level studies.
+
+## **Decision-Making Under Cost-Sharing**
+
+The way individuals perceive financial responsibility impacts their behavior. @Huțu2024 conducted a vignette-based study in Romania and found that individuals with comprehensive insurance were more likely to choose expensive care options regardless of benefit. This illustrates how insurance can break the price signals in healthcare markets. The same psychological forces may apply in reverse under a savings-based system: individuals may become overly cautious or delay care despite eligibility or reimbursement.
+
+@Lee2020 highlights how practical and cultural factors shape health-seeking behavior among the elderly in Singapore, including reliance on traditional remedies and distrust in formal care. These factors must be considered in analyzing how Singaporeans make healthcare decisions.
+
+Behavioral economics concepts such as mental accounting, present bias, and liquidity constraints provide useful lenses. Medisave balances may be mentally “earmarked” for serious illness rather than routine care, despite program rules allowing preventive use. This tension between perceived and actual fungibility of funds is a key area of exploration in this study.
+
+## **Efficiency and Equity in System Design**
+
+@Ivankova2019 compare various healthcare financing systems across OECD countries. They conclude that systems prioritizing preventive care and access, like NHS models, tend to achieve better outcomes relative to cost. Singapore’s hybrid system may offer a promising alternative by incorporating market mechanisms (via Medisave) while retaining state oversight and redistribution. However, whether these benefits manifest at the individual decision-making level remains unclear. My study addresses this gap.
+
+Similarly, @pauly2011insurance suggests that sustainable systems must align incentives across payers, providers, and patients, which requires detailed attention to behavioral responses, not just aggregate spending.
+
+Taken together, these findings suggest that Medisave’s influence depends on more than balance amounts: psychological framing, cultural expectations, and perceived opportunity cost all play roles. This study is designed to isolate those variables using a survey that simulates real-world trade-offs, offering a fresh lens on the behavioral effects of cost-sharing through personal health savings.
+
+# **Hypothesis**
+
+H1: Higher Medisave balances are associated with increased healthcare utilization and greater adoption of preventive care.
+
+H2: Singaporeans with higher Medisave balances are more likely to perceive costly treatments as vital, while those with lower balances may avoid or delay care.
+
+H3: Behavioral responses to Medisave balances vary by income and age, with low-income and elderly individuals being more cost-sensitive.
+
+# Research Design and Methodology
+
+## **Design Overview**
+
+To investigate these hypotheses, this study adopts a vignette-based survey design that allows respondents to make hypothetical healthcare decisions under varying financial circumstances. Vignettes provide a controlled way to assess preferences without the ethical and logistical challenges of real-world experimentation. This approach allows us to manipulate the key variables of treatment cost, Medisave coverage, and the severity of the condition while observing how individuals weigh options when constrained by personal financial factors.
+
+Each vignette simulates a distinct medical scenario with clear financial trade-offs and asks respondents to choose from three treatment options of varying cost and invasiveness. The structure of these scenarios is designed to mimic common real-world dilemmas: chronic discomfort vs. surgery, preventive screening vs. deferral, and life-threatening conditions vs. delayed care. A fourth vignette will be added to broaden behavioral insight.
+
+## **Population and Sampling**
+
+The target population for this study includes Singaporean adults aged 25 to 64, representing the primary working and healthcare-consuming population segment. A stratified random sampling approach will be used to ensure demographic representativeness across age, ethnicity, and socioeconomic class.
+
+Strata will include:
+
+-   Age: 25–34, 35–44, 45–54, 55–64
+
+-   Ethnicity: Chinese, Malay, Indian, Others
+
+-   Housing type (a socioeconomic proxy): HDB 1–3 room, HDB 4-room, HDB 5-room/Executive, Private housing
+
+A commercial survey platform such as Qualtrics or Rakuten Insight will be used to recruit respondents and enforce quotas. The expected sample size of 300 will provide sufficient power to detect medium-sized effects in regression models while maintaining practical feasibility. Survey integrity will be maintained via screener questions, minimum time thresholds, and logic checks.
+
+## **Data Collection**
+
+The survey will be mobile-optimized and distributed via secure links. Participants will be briefed on confidentiality, study goals, and the hypothetical nature of vignettes. The questionnaire will include the following modules:
+
+1.  **Demographics**: Age, income, education, gender, marital status, housing type, and employment.
+
+2.  **Health Background**: Presence of chronic conditions, health literacy, frequency of preventive care.
+
+3.  **Financial Status**: Estimated Medisave balance (self-reported), income bracket, perceived financial stress.
+
+4.  **Cost Attitudes**: Agreement with statements like "I avoid seeing a doctor due to cost," or "I only use Medisave for emergencies."
+
+5.  **Vignettes**: Four hypothetical medical scenarios with forced-choice responses and optional rationale.
+
+## Example Vignettes:
+
+-   *Scenario 1: Herniated Disc*: "You experience chronic back pain affecting daily activities. With your Medisave balance at \$5,000 and the surgery costing \$100,000, do you: (1) Opt for surgery (covered 80% by Medisave), (2) Choose \$5,000 pain injections, or (3) \$100/month in OTC pain medication and physiotherapy. What would you choose and why?"
+
+-   *Scenario 2: High-Risk Cancer Diagnosis*: "You are diagnosed with a high-risk cancer. You can: (1) Begin \$250,000 treatment immediately (partially covered), (2) Delay and seek a second opinion, (3) Use alternative therapies. What would you choose and why?"
+
+-   *Scenario 3: Preventive Care Decision:* "You are offered a colorectal cancer screening that costs \$1,200. The procedure is eligible for Medisave use. Your current Medisave balance is \$2,000. Would you: (1) Schedule the screening immediately, (2) Postpone it until your balance increases, or (3) Decline the screening?" 
+
+-   *Scenario 4: Emergengy Visit:* "You wake up with chest pain and dizziness. You can: (1) Call ambulance and go to private hospital (\$500 fee); (2) Take a taxi to public A&E (longer wait, subsidized); or (3) Stay home and monitor symptoms."
+
+Each vignette will also collect a confidence rating (1–5 scale) and free-text justification for qualitative analysis. Treatments will be randomized in order to prevent bias, and all scenarios will be culturally adapted and pilot-tested in a focus group of Singaporean residents.
+
+## **Variables**
+
+-   **Dependent Variables**: Treatment choice, preventive care use.
+
+    -   Treatment Choice (ordinal: high, mid, low)
+
+    -   Preventive care (binary)
+
+    -   Delay or avoid behavior (binary)
+
+-   **Independent Variables**:
+
+    -   Medisave Balance (log-transformed)
+
+    -   Income Bracket, age (continuous)
+
+    -   Interactions: Medisave x Income, Medisave x age
+
+-   **Control Variables**:
+
+    -   Education level, gender, chronic disease status, financial literacy, housing type
+
+These variables will allow the analysis to capture both direct effects and conditional relationships, such as whether high Medisave balances only increase utilization for wealthier or younger individuals.
+
+## **Statistical Analysis Plan**
+
+This study will employ ordinal logistic regression to analyze how Medisave balances and socioeconomic factors influence the likelihood of selecting more expensive healthcare options. Ordinal regression is appropriate because the outcome variable of treatment choice is ranked but does not assume equal intervals between categories.
+
+The model specification for each vignette will include:
+
+-   **Dependent Variable**: Treatment choice (Expensive = 1, Medium = 2, Cheap = 3)
+
+-   **Independent Variables**: Log-transformed Medisave balance, income bracket, age
+
+-   **Interaction Terms**: Medisave × income, Medisave × age
+
+-   **Control Variables**: Education, gender, employment status, chronic condition presence, perceived cost sensitivity
+
+The proportional odds assumption will be tested using the Brant test. If the assumption is violated, alternative models such as multinomial logistic regression or partial proportional odds models may be used. To further validate findings, marginal effects and predicted probabilities will be computed for each independent variable.
+
+A robustness check will include excluding respondents who select the same treatment level for all vignettes to assess satisficing behavior. Descriptive statistics and correlation matrices will be presented to support interpretation.
+
+## **Mock Results and Visualizations**
+
+Using simulated data from 300 respondents answering four vignettes each, I observe that treatment choices are significantly influenced by Medisave balances.
+
+**Figure 2**: *Proportion of Treatment Choices by Medisave Balance Bracket.* Respondents with higher Medisave balances are more likely to choose expensive options, particularly in scenarios involving chronic pain and preventive screening. The results below summarize the regression output:
+
+```{r results='asis', message=FALSE}
+library(MASS)
+library(dplyr)
+library(knitr)
+
+# Read data and preprocess
+df <- read.csv("simulated_vignette_d.csv")
+df$Vignette1_Choice <- ordered(df$Vignette1_Choice)
+df$Vignette2_Choice <- ordered(df$Vignette2_Choice)
+df$Vignette3_Choice <- ordered(df$Vignette3_Choice)
+df$Education <- factor(df$Education)
+df$log_Medisave <- log(df$MedisaveBalance + 1)
+
+# Run models
+m1 <- polr(Vignette1_Choice ~ log_Medisave, data = df, Hess = TRUE)
+m2 <- polr(Vignette2_Choice ~ log_Medisave, data = df, Hess = TRUE)
+m3 <- polr(Vignette3_Choice ~ log_Medisave, data = df, Hess = TRUE)
+
+# Extract results
+model_summary <- function(model, vignette_name) {
+  coefs <- coef(summary(model))
+  estimate <- round(coefs[1, "Value"], 3)
+  se <- round(coefs[1, "Std. Error"], 3)
+  tval <- round(coefs[1, "t value"], 3)
+  pval <- round(2 * (1 - pnorm(abs(tval))), 4)
+  odds_ratio <- round(exp(coefs[1, "Value"]), 3)
+  
+  data.frame(
+    Vignette = vignette_name,
+    Estimate = estimate,
+    `Std. Error` = se,
+    `t value` = tval,
+    `p value` = pval,
+    `Odds Ratio` = odds_ratio
+  )
+}
+
+# Combine all
+results <- bind_rows(
+  model_summary(m1, "Vignette 1"),
+  model_summary(m2, "Vignette 2"),
+  model_summary(m3, "Vignette 3")
+)
+
+# Print table with proper caption
+kable(results, caption = "Effect of Log-Transformed Medisave Balance on Treatment Choice (Ordinal Logistic Regression)")
+
+
+```
+
+**Figure 3:** *Predicted Probability of Choosing Expensive Treatment by Medisave Level*. These results align with the behavioral insight that individuals may treat Medisave balances as "dedicated" money, leading to reduced sensitivity to healthcare costs within the system’s boundaries. Notably, older respondents and those in the lowest income bracket exhibited heightened cost sensitivity regardless of balance, suggesting behavioral heterogeneity.
+
+```{r}
+library(tidyverse)
+
+# Load and reshape
+df_long <- df %>%
+  mutate(
+    MedisaveBracket = case_when(
+      MedisaveBalance < 10000                         ~ "< $10k",
+      MedisaveBalance >= 10000 & MedisaveBalance < 50000 ~ "$10k–50k",
+      TRUE                                              ~ "> $50k"
+    ),
+    MedisaveBracket = factor(
+      MedisaveBracket,
+      levels = c("< $10k", "$10k–50k", "> $50k")
+    )
+  ) %>%
+  pivot_longer(
+    cols      = starts_with("Vignette"),
+    names_to  = "Vignette",
+    values_to = "Choice"
+  ) %>%
+  mutate(
+    Choice = factor(Choice,
+                    levels = c(1, 2, 3),
+                    labels = c("Expensive", "Medium", "Cheap"))
+  )
+
+# Plot
+ggplot(df_long, aes(x = MedisaveBracket)) +
+  geom_bar(fill = "steelblue") +
+  facet_wrap(~ Choice, ncol = 1) +
+  labs(
+    title = "Number of Responses by Medisave Bracket",
+    x     = "Medisave Balance Bracket",
+    y     = "Count of Responses"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "none")
+```
+
+# **Limitations and Implications**
+
+Despite its strengths, this study has several limitations. First, the reliance on self-reported balances and hypothetical choices may introduce bias. Participants may overestimate balances or respond aspirationally rather than reflectively. Second, the cultural specificity of Singapore’s healthcare model may limit generalizability to other systems.
+
+Further, the survey's use of forced-choice vignettes simplifies real-world decision-making. In practice, people may seek second opinions, consult family, or defer decisions altogether. Finally, the study assumes respondents understand Medisave mechanics; misunderstanding could distort choices.
+
+Nonetheless, these findings carry strong implications. For Singapore, understanding how Medisave affects decision-making can inform outreach, education, and policy adjustments aimed at promoting appropriate utilization. For the U.S. and other countries grappling with high costs and low satisfaction, this study offers insight into how a structured savings-based model might shape healthcare behavior. If individuals perceive dedicated medical savings as psychologically distinct from general income, systems like Medisave could promote transparency, reduce administrative waste, and empower patients while avoiding the moral hazard associated with conventional insurance. However, equity concerns remain. Policymakers must ensure that such systems do not exacerbate disparities by empowering only the financially secure.
+
+Future research could combine vignette surveys with behavioral experiments or link administrative data to examine long-term effects of Medisave on population health and health equity outcomes.
+
+For the United States, where employer-based coverage remains dominant and insurance opacity fuels waste and frustration, Singapore's Medisave system suggests a different path; one that places consumers in a more accountable and empowered position. If managed with safeguards to ensure equity, such a model could improve price transparency, reduce low-value care, and rebuild trust in the healthcare system.
+
+# References
